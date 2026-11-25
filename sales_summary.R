@@ -1,10 +1,10 @@
-# AI Assistance Declaration: I used AWS Quick (generative AI assistant, accessed 2026-11-25) for Markdown structure ideas, README drafting, R Markdown formatting suggestions, and syntax review. Prompts used: see `docs/Appendix_AI_Prompts.md` (seed, refinement, and critique/validation prompts for Steps 1-3). I verified outputs using GitHub Markdown preview, knitting the .Rmd in RStudio/Posit Cloud, and comparing structure against the tidyverse `dplyr` README. All final calculations are done by myself (computed by my R code at run time, not by AI). I am responsible for the accuracy and originality of this work.
+# AI Assistance Declaration: I used AWS Quick (generative AI assistant, accessed 2026-11-25) for Markdown structure ideas, README drafting, R Markdown formatting suggestions, and syntax review. Prompts used: see `Appendix_AI_Prompts.md` (seed, refinement, and critique/validation prompts for Steps 1-3). I verified outputs using GitHub Markdown preview, knitting the .Rmd in RStudio/Posit Cloud, and comparing structure against the tidyverse `dplyr` README. All final calculations are done by myself (computed by my R code at run time, not by AI). I am responsible for the accuracy and originality of this work.
 
 # sales_summary.R
 # Purpose: Generate a synthetic retail sales dataset and summarise
 #          revenue by region and product category.
 # Input : none (synthetic data is generated with a fixed seed)
-# Output: data/synthetic_sales.csv, data/sales_summary.csv
+# Output: synthetic_sales.csv, sales_summary.csv
 
 library(dplyr)
 library(readr)
@@ -32,8 +32,7 @@ summary_tbl <- sales |>
   ) |>
   arrange(desc(total_revenue))
 
-dir.create("data", showWarnings = FALSE)
-write_csv(sales, "data/synthetic_sales.csv")
-write_csv(summary_tbl, "data/sales_summary.csv")
+write_csv(sales, "synthetic_sales.csv")
+write_csv(summary_tbl, "sales_summary.csv")
 
 print(summary_tbl)

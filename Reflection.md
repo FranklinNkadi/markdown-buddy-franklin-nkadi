@@ -1,4 +1,4 @@
-> AI Assistance Declaration: I used AWS Quick (generative AI assistant, accessed 2026-11-25) for Markdown structure ideas, README drafting, R Markdown formatting suggestions, and syntax review. Prompts used: see `docs/Appendix_AI_Prompts.md` (seed, refinement, and critique/validation prompts for Steps 1-3). I verified outputs using GitHub Markdown preview, knitting the .Rmd in RStudio/Posit Cloud, and comparing structure against the tidyverse `dplyr` README. All final calculations are done by myself (computed by my R code at run time, not by AI). I am responsible for the accuracy and originality of this work.
+> AI Assistance Declaration: I used AWS Quick (generative AI assistant, accessed 2026-11-25) for Markdown structure ideas, README drafting, R Markdown formatting suggestions, and syntax review. Prompts used: see `Appendix_AI_Prompts.md` (seed, refinement, and critique/validation prompts for Steps 1-3). I verified outputs using GitHub Markdown preview, knitting the .Rmd in RStudio/Posit Cloud, and comparing structure against the tidyverse `dplyr` README. All final calculations are done by myself (computed by my R code at run time, not by AI). I am responsible for the accuracy and originality of this work.
 
 # Reflection – Markdown Buddy
 
@@ -18,7 +18,7 @@ Validation methods: GitHub Markdown preview, knitting in RStudio, and side-by-si
 
 ## 3. How did you ensure ethical and responsible use of AI in this assignment?
 
-- **Disclosure:** The AI Assistance Declaration is at the top of every file, and the README ends with an AI Assistance Disclosure section; all prompts are in `docs/Appendix_AI_Prompts.md`.
+- **Disclosure:** The AI Assistance Declaration is at the top of every file, and the README ends with an AI Assistance Disclosure section; all prompts are in `Appendix_AI_Prompts.md`.
 - **Privacy:** Only synthetic data generated with `set.seed(400)` was used; no real or personal data was shared with the AI.
 - **No AI computation:** All numbers are produced by my R code at knit time – the AI only helped with structure and formatting.
 - **Verification & ownership:** Every AI suggestion was reviewed, tested, and edited before inclusion. I take full responsibility for the accuracy and originality of the final work.

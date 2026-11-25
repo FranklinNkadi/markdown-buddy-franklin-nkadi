@@ -26,15 +26,12 @@ A small R data analysis project that generates a **synthetic** retail sales data
 
 ```text
 markdown-buddy-franklin-nkadi/
-├── README.md                  # Project documentation (this file)
-├── Reflection.md              # Answers to reflection questions
-├── scripts/
-│   ├── sales_summary.R        # Main analysis script
-│   └── sales_summary.Rmd      # R Markdown documentation of the script
-├── data/                      # Created when the script runs
-└── docs/
-    ├── README_outline.md      # Step 1 outline
-    └── Appendix_AI_Prompts.md # All prompts and key responses
+├── README.md               # Project documentation (this file)
+├── Reflection.md           # Answers to reflection questions
+├── sales_summary.R         # Main analysis script
+├── sales_summary.Rmd       # R Markdown documentation of the script
+├── README_outline.md       # Step 1 outline
+└── Appendix_AI_Prompts.md  # All prompts and key responses
 ```
 
 ## Requirements
@@ -51,7 +48,7 @@ markdown-buddy-franklin-nkadi/
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/<FranklinNkadi>/markdown-buddy-franklin-nkadi.git
+   git clone https://github.com/FranklinNkadi/markdown-buddy-franklin-nkadi.git
    cd markdown-buddy-franklin-nkadi
    ```
 
@@ -66,13 +63,13 @@ markdown-buddy-franklin-nkadi/
 Run the analysis script from the project root:
 
 ```r
-source("scripts/sales_summary.R")
+source("sales_summary.R")
 ```
 
 Render the documentation:
 
 ```r
-rmarkdown::render("scripts/sales_summary.Rmd")
+rmarkdown::render("sales_summary.Rmd")
 ```
 
 ## Example Code
@@ -88,9 +85,9 @@ sales |>
 
 ## Outputs
 
-- `data/synthetic_sales.csv` – the generated order-level dataset.
-- `data/sales_summary.csv` – revenue summary by region and category.
-- `scripts/sales_summary.html` – knitted R Markdown report.
+- `synthetic_sales.csv` – the generated order-level dataset.
+- `sales_summary.csv` – revenue summary by region and category.
+- `sales_summary.html` – knitted R Markdown report.
 
 ## License
 

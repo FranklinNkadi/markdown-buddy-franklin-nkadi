@@ -1,4 +1,4 @@
-> AI Assistance Declaration: I used AWS Quick (generative AI assistant, accessed 2026-11-25) for Markdown structure ideas, README drafting, R Markdown formatting suggestions, and syntax review. Prompts used: see `docs/Appendix_AI_Prompts.md` (seed, refinement, and critique/validation prompts for Steps 1-3). I verified outputs using GitHub Markdown preview, knitting the .Rmd in RStudio/Posit Cloud, and comparing structure against the tidyverse `dplyr` README. All final calculations are done by myself (computed by my R code at run time, not by AI). I am responsible for the accuracy and originality of this work.
+> AI Assistance Declaration: I used AWS Quick (generative AI assistant, accessed 2026-11-25) for Markdown structure ideas, README drafting, R Markdown formatting suggestions, and syntax review. Prompts used: see `Appendix_AI_Prompts.md` (seed, refinement, and critique/validation prompts for Steps 1-3). I verified outputs using GitHub Markdown preview, knitting the .Rmd in RStudio/Posit Cloud, and comparing structure against the tidyverse `dplyr` README. All final calculations are done by myself (computed by my R code at run time, not by AI). I am responsible for the accuracy and originality of this work.
 
 # Appendix – AI Prompts and Key Responses
 
@@ -82,35 +82,35 @@ Core sections in nearly every R README: **Overview**, **Installation**, **Usage/
 ### Seed Prompt
 > Here's a summary of my R project: An R script that generates 500 synthetic retail orders (seed 400) and summarises orders, units and revenue by region and category using dplyr and readr. Generate a professional README.md file using Markdown.
 
-**Key response:** A README with Title, Overview (purpose, synthetic data, analysis), Project Structure tree, Usage (`source("scripts/sales_summary.R")`), and Outputs (`synthetic_sales.csv`, `sales_summary.csv`).
+**Key response:** A README titled "Synthetic Retail Sales Summary (R)" with sections: Overview (purpose, synthetic data with `set.seed(400)`, analysis), Project Structure (text tree), Dependencies (R ≥ 4.1, dplyr, readr with links), Usage (`source("sales_summary.R")`), and Outputs (`synthetic_sales.csv`, `sales_summary.csv`).
 
 ### Refinement Prompt
 > Add sections for Installation, Example Code, and License. Keep tone concise and professional.
 
-**Key response:** Added Installation (`git clone`, `install.packages(c("dplyr","readr","rmarkdown","knitr"))`), Example Code (`group_by(region) |> summarise(total_revenue = sum(revenue))`), and License (MIT).
+**Key response:** Added Installation (numbered steps: `git clone https://github.com/FranklinNkadi/markdown-buddy-franklin-nkadi.git`, then `install.packages(c("dplyr", "readr", "rmarkdown", "knitr"))`), Example Code (a `group_by(region, category) |> summarise(orders, total_units, total_revenue)` pipeline), and License (MIT, linked).
 
 ### Critique/Validation Prompt
 > Review the Markdown for syntax errors and suggest 2 improvements for clarity.
 
-**Key response:** The `|>` inside the Requirements table must be escaped (`\|>`) or it breaks the table; all code blocks need language tags. Improvements: (1) add a Table of Contents with anchor links, (2) add a Requirements table with versions.
+**Key response:** No syntax errors – single H1, consistent `##` sections, all code blocks closed and language-tagged, code blocks inside the numbered list correctly indented 3 spaces, valid links, consistent `-` bullets. Improvements: (1) add a Table of Contents with anchor links; (2) replace the Dependencies list with a Requirements table showing versions, escaping the pipe as `\|>` inside the table.
 
-**My edits:** Escaped the pipe, tagged all code blocks (`r`, `bash`, `text`), added ToC and Requirements table, added AI Assistance Disclosure section. Checked rendering in GitHub preview.
+**My edits:** Applied both suggestions (Table of Contents + Requirements table with escaped pipe), added the AI Assistance Disclosure section, and corrected file paths to match the flat repository layout. Verified rendering in GitHub preview.
 
 ## Step 3 – R Markdown Documentation
 
 ### Seed Prompt
 > Here's my R script description: sales_summary.R generates synthetic sales data and outputs synthetic_sales.csv and sales_summary.csv. Suggest Markdown formatting and code block examples.
 
-**Key response:** Use a YAML header (title, author, date, `html_document`), a Purpose section, and one `{r}` chunk per step: load packages, generate data, summarise, save.
+**Key response:** Suggested (1) a YAML header (title, author, `` `r Sys.Date()` ``, `html_document`); (2) a section layout of `# Purpose`, `## Inputs`, `## Outputs`; (3) named R chunks `{r packages}`, `{r generate-data}`, `{r save-outputs}`. Tips: name every chunk, use backticks for files/functions, one step per chunk with a sentence above it.
 
 ### Refinement Prompt
 > Add syntax highlighting and improve section organization (e.g., # Purpose, ## Inputs, ## Outputs).
 
-**Key response:** Added `highlight: tango`, `toc: true`, `toc_float: true`; structure `# Purpose` → `## Inputs` → `## Outputs` → `# Code Walkthrough` with named chunks (`packages`, `generate-data`, `summarise`, `save`).
+**Key response:** Added `highlight: tango`, `toc: true`, `toc_float: true` to the YAML; reorganised into `# Purpose` → `## Inputs` → `## Outputs` (as a table) → `# Code Walkthrough` with numbered `##` steps (Load packages, Generate data, Summarise, Save outputs), one chunk each.
 
 ### Critique/Validation Prompt
 > Is the Markdown consistent with RMarkdown best practices?
 
-**Key response:** Mostly yes. Recommended: a `setup` chunk with `knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)`; `eval=FALSE` on the file-writing chunk; `knitr::kable()` for tables; unique chunk labels without spaces.
+**Key response:** Mostly yes (complete YAML, TOC and highlighting, logical heading hierarchy, unique space-free chunk labels, one task per chunk). Recommended: (1) a `setup` chunk with `knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)`; (2) `eval=FALSE` on the file-writing chunk; (3) show results with `knitr::kable(summary_tbl)`; (4) a verification chunk `all.equal(sum(sales$revenue), sum(summary_tbl$total_revenue))`.
 
-**My edits:** Added setup chunk, `eval=FALSE` save chunk, `kable()` table, an Outputs table, and a cross-check chunk confirming raw total = summary total. Knitted in RStudio/Posit Cloud.
+**My edits:** Implemented all four recommendations in `sales_summary.Rmd`. Knitted successfully in Posit Cloud ("Output created: sales_summary.html"); `sales` = 500 obs, `summary_tbl` = 12 obs.
