@@ -1,4 +1,4 @@
-> AI Assistance Declaration: I used AWS Quick (generative AI assistant, accessed 2026-11-25) for Markdown structure ideas, README drafting, R Markdown formatting suggestions, and syntax review. Prompts used: see `docs/Appendix_AI_Prompts.md` (seed, refinement, and critique/validation prompts for Steps 1-3). I verified outputs using GitHub Markdown preview, knitting the .Rmd in RStudio/Posit Cloud, and comparing structure against the tidyverse `dplyr` README. All final calculations are done by myself (computed by my R code at run time, not by AI). I am responsible for the accuracy and originality of this work.
+> AI Assistance Declaration: I used AWS Quick (generative AI assistant, accessed 2026-11-25) for Markdown structure ideas, README drafting, R Markdown formatting suggestions, and syntax review. Prompts used: see `Appendix_AI_Prompts.md` (seed, refinement, and critique/validation prompts for Steps 1-3). I verified outputs using GitHub Markdown preview, knitting the .Rmd in RStudio/Posit Cloud, and comparing structure against the tidyverse `dplyr` README. All final calculations are done by myself (computed by my R code at run time, not by AI). I am responsible for the accuracy and originality of this work.
 
 # Markdown Buddy – Synthetic Sales Summary in R
 
@@ -51,7 +51,7 @@ markdown-buddy-franklin-nkadi/
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/<your-username>/markdown-buddy-franklin-nkadi.git
+   git clone https://github.com/<FranklinNkadi>/markdown-buddy-franklin-nkadi.git
    cd markdown-buddy-franklin-nkadi
    ```
 
@@ -111,4 +111,4 @@ This project is released under the [MIT License](https://opensource.org/licenses
   - Escaped the pipe character inside the table so GitHub renders it correctly.
   - Removed placeholder badges that pointed to non-existent CI services.
   - Compared section order with the tidyverse `dplyr` README and moved *Installation* before *Usage*.
-- Full prompts and key responses: [`docs/Appendix_AI_Prompts.md`](docs/Appendix_AI_Prompts.md).
+- Full prompts and key responses: [`Appendix_AI_Prompts.md`](Appendix_AI_Prompts.md).
